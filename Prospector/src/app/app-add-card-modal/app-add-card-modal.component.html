@@ -3,7 +3,11 @@
   <input type="text" class="form-control" formControlName="name">
 <br>
   <label>Icon</label>
-  <input type="text" class="form-control" formControlName="icon">
+  <div class="form-control" (click)="showemoji=!showemoji">
+    <ngx-emoji [emoji]="emojiSelected"></ngx-emoji>
+  </div>
+  <emoji-mart *ngIf="showemoji" (emojiClick)="addEmoji($event);showemoji=!showemoji"></emoji-mart>
+  
 <br>
   <label>Description</label>
   <textarea type="textbox" class="form-control" placeholder="Description" formControlName="description"></textarea>

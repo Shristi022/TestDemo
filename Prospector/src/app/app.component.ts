@@ -4,24 +4,35 @@ import { AddCardModalComponent } from './app-add-card-modal/app-add-card-modal.c
 import { TableComponent } from './table/table.component';
 
 export class DialogData {
-  name: string='';
+  name: string = '';
   color: any;
+  icon: any;
+  description: any;
+}
+export class SegmentData {
+  name: any;
+  icon: any;
 }
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  segments: string[] = ['Segment 1', 'Segment 2'];
+  segments: SegmentData[] = [
+    { name: 'Segment 1', icon: ':joy:' },
+    { name: 'Segment 2', icon: ':dog:' },
+  ];
 
-  list: DialogData[] = [{ name: 'System', color: 'red' }];
+  list: DialogData[] = [];
 
   constructor(private matDialog: MatDialog) {}
 
   addSegment() {
     const dialog = this.matDialog.open(AddCardModalComponent);
     dialog.afterClosed().subscribe((result) => {
-      this.segments.push(result.name);
+      if (result != undefined) {
+        this.segments.push(result);
+      }
     });
   }
 

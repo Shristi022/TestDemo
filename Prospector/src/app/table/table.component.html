@@ -3,7 +3,9 @@
     <input type="text" class="form-control" formControlName="name">
   <br>
     <label>Icon</label>
-    <input type="text" class="form-control" formControlName="icon">
+    <mat-form-field appearance="fill" class="form-control" formControlName="icon" (click)="showemoji=!showemoji">
+      <ngx-emoji [emoji]="emojiSelected"></ngx-emoji></mat-form-field>
+      <emoji-mart *ngIf="showemoji" (emojiClick)="addEmoji($event);showemoji=!showemoji"></emoji-mart>
   <br>
     <label>Color</label>
     <input type="color" class="form-control" formControlName="color">
