@@ -1,0 +1,15 @@
+<form [formGroup]="segmentForm">
+  <label>Name*</label>
+  <input type="text" class="form-control" formControlName="name">
+<br>
+  <label>Icon</label>
+  <input type="text" class="form-control" formControlName="icon">
+<br>
+  <label>Description</label>
+  <textarea type="textbox" class="form-control" placeholder="Description" formControlName="description"></textarea>
+  <div class="pt-2">
+    <button mat-button (click)="onAddSegemnt()" [disabled]="segmentForm.controls['name'].value == '' ? true : false">Save</button>
+    <button mat-button style="margin-left: 40%;" (click)="closeDialog()">Cancel</button>
+  </div>
+</form>
+

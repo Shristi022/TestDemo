@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@ctrl/ngx-emoji-mart/picker';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+  
+
+
+.container {
+    text-align: center;
+    margin: 0px auto;
+    width: 300px;
+    height: 600px;
+    overflow: hidden;
+    display: block;
+    
+}  
+.button-active{
+    color:rgb(109, 13, 235);
+    }
+    
+    .button-standard{
+    color: rgb(46, 44, 44);
+    }

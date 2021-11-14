@@ -1,0 +1,16 @@
+<form [formGroup]="tableForm">
+    <label>Name*</label>
+    <input type="text" class="form-control" formControlName="name">
+  <br>
+    <label>Icon</label>
+    <input type="text" class="form-control" formControlName="icon">
+  <br>
+    <label>Color</label>
+    <input type="color" class="form-control" formControlName="color">
+    <div class="pt-2">
+      <button mat-button (click)="onAddTable()" [disabled]="tableForm.controls['name'].value == '' ? true : false">Save</button>
+      <button mat-button style="margin-left: 40%;" (click)="closeDialog()">Cancel</button>
+    </div>
+  </form>
+  
+  

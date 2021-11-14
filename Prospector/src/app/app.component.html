@@ -1,0 +1,60 @@
+<!-- <div style="display: flex"> -->
+  <div style="display: flex; ">
+  <div
+    class="d-flex flex-column flex-shrink-0 p-3 bg-light"
+    style="width: 280px; height: auto; padding-top: 0%; margin-bottom: 0%"
+  >
+    <span class="fs-4"><b>Prospector</b></span>
+    <hr />
+    <input
+      type="search"
+      class="form-control"
+      placeholder="Search..."
+      aria-label="Search"
+    />
+
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li *ngFor="let i of segments">{{ i }}</li>
+    </ul>
+    <hr />
+    <button
+      mat-button
+      style="background-color: rgb(67, 67, 216)"
+      (click)="addSegment()"
+    >
+      Add a Segment
+    </button>
+  </div>
+
+  <div class="section-top">
+    <div class="container">
+      <h2>Segment 1</h2>
+      <div class="child">
+        
+        <div class="child">
+          <button type="button" style="size: 100px; background-color: burlywood;" >
+            +
+          </button>
+          <br>
+          <label>Static</label>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="section-bottom">
+    <div class="container">
+      <h2>Segment 2</h2>
+      
+    <div *ngFor="let user of list" class="child">
+      <button  type="button" style="size: 100px; background-color: cornflowerblue;" (click)="addTable()">
+        +
+      </button>
+      <br>
+      <label [style.color]="user.color">{{user.name}}</label>
+    </div>
+  </div>
+</div>
+
+
+
